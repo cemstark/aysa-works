@@ -7,339 +7,813 @@
   <title>Aysa-Works | İç Mimari Stüdyosu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Sıcak nötrler %55–65 */
-      --paper:       #FAF5EB;
-      --ivory:       #F2EDE3;
-      --grej:        #D8CFC0;
-      --taupe:       #B5A68E;
-      --stone:       #C4B8A6;
-      --warm-gray:   #8C8578;
-      --mushroom:    #A89F8F;
+      --paper:       #F6F3EE;
+      --bone:        #ECE7DD;
+      --warm-white:  #FAF8F4;
+      --stone:       #C9C0B1;
+      --taupe:       #9C8F78;
+      --ink:         #1C1A17;
+      --ink-soft:    #3A352E;
+      --muted:       #6F6A60;
+      --accent:      #6B1F28;
+      --line:        rgba(28,26,23,.12);
 
-      /* Koyu tonlar %20–25 */
-      --wood-dark:   #3A2E22;
-      --ink:         #2B2018;
-      --ink-deep:    #1F1914;
-      --shadow:      rgba(31,25,20,.55);
-
-      /* Bordo vurgu %10–15 */
-      --bordeaux:      #6B1F28;
-      --bordeaux-deep: #4F141B;
-      --bordeaux-soft: #8A2E38;
-
-      /* Metal ve aksesuar %3–5 */
-      --brass:       #B89968;
-      --bronze:      #9B8866;
-      --antique:     #7D6B4F;
-
-      --serif:       'Fraunces', Georgia, serif;
-      --sans:        'Inter', system-ui, sans-serif;
-      --ease:        cubic-bezier(.22,.61,.36,1);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Inter', system-ui, -apple-system, sans-serif;
+      --ease:  cubic-bezier(.22,.61,.36,1);
     }
 
     html { scroll-behavior: smooth; }
     body {
-      background: var(--ivory);
+      background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
       font-weight: 400;
-      line-height: 1.65;
-      overflow-x: hidden;
+      font-size: 15px;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
 
-    ::selection { background: var(--bordeaux); color: var(--paper); }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
 
-    img, svg { display: block; max-width: 100%; }
-    button { font: inherit; }
-    a { color: inherit; }
+    ::selection { background: var(--ink); color: var(--paper); }
 
-    nav {
+    /* ---------- NAVIGATION ---------- */
+    .nav {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1.4rem 3.5rem;
-      background: transparent;
-      transition: background .35s var(--ease), padding .35s var(--ease), border-color .35s var(--ease);
+      justify-content: space-between;
+      padding: 1.6rem 3rem;
+      transition: background .4s var(--ease), padding .4s var(--ease), border-color .4s var(--ease), color .4s var(--ease);
+      color: var(--paper);
       border-bottom: 1px solid transparent;
     }
-    nav.scrolled {
-      background: rgba(242, 237, 227, 0.94);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom-color: rgba(31,25,20,.08);
-      padding: 1rem 3.5rem;
+    .nav.scrolled {
+      background: rgba(246,243,238,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       color: var(--ink);
+      padding: 1rem 3rem;
+      border-bottom-color: var(--line);
     }
-    nav.on-dark:not(.scrolled) { color: var(--paper); }
-    nav.on-dark:not(.scrolled) .nav-logo,
-    nav.on-dark:not(.scrolled) .nav-links a { color: var(--paper); }
-    nav.on-dark:not(.scrolled) .nav-logo .dot { background: var(--brass); }
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: .02em;
+      line-height: 1;
+    }
+    .nav-brand span { font-style: italic; color: var(--accent); }
+    .nav.scrolled .nav-brand span { color: var(--accent); }
 
-    .nav-logo {
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      line-height: 0;
-      color: var(--ink);
-    }
-    .nav-logo .dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--bordeaux);
-      display: inline-block;
-      transition: background .3s var(--ease);
-    }
-
-    .logo-mark {
-      object-fit: contain;
-      display: block;
-      mix-blend-mode: multiply;
-      transition: filter .3s var(--ease);
-    }
-    nav.on-dark:not(.scrolled) .logo-mark {
-      filter: invert(1);
-      mix-blend-mode: screen;
-    }
-    .nav-logo .logo-mark   { width: 54px; height: 54px; }
-    nav.scrolled .nav-logo .logo-mark { width: 46px; height: 46px; }
-    footer .logo .logo-mark { width: 48px; height: 48px; }
-
-    .hero-watermark {
-      position: absolute;
-      left: 4.5rem;
-      top: 6.5rem;
-      width: 72px;
-      height: 72px;
-      z-index: 4;
-      opacity: .9;
-      object-fit: contain;
-      filter: invert(1);
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .form-success .mark-logo {
-      width: 40px; height: 40px;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-      filter: none;
-    }
-
-    .nav-links { display: flex; gap: 2.3rem; list-style: none; align-items: center; }
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; align-items: center; }
     .nav-links a {
-      font-family: var(--sans);
-      font-size: .76rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--ink);
-      opacity: .72;
-      cursor: pointer;
-      position: relative;
-      padding: .25rem 0;
-      transition: opacity .2s;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px; left: 0;
-      width: 0; height: 1px;
-      background: currentColor;
-      transition: width .35s var(--ease);
-    }
-    .nav-links a:hover, .nav-links a.active { opacity: 1; }
-    .nav-links a.active::after { width: 100%; }
-
-    .nav-cta {
-      padding: .55rem 1.15rem !important;
-      border: 1px solid currentColor;
-      border-radius: 100px;
-      opacity: .9 !important;
-      letter-spacing: .12em !important;
-    }
-    .nav-cta::after { display: none !important; }
-    .nav-cta:hover { background: var(--bordeaux); border-color: var(--bordeaux); color: var(--paper) !important; }
-
-    .page { display: none; }
-    .page.active { display: block; animation: fadeIn .55s var(--ease); }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .7rem;
-      padding: 1.05rem 2.2rem;
-      border: 1px solid currentColor;
-      font-family: var(--sans);
-      font-size: .75rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      cursor: pointer;
-      background: transparent;
-      color: inherit;
-      transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
-      width: fit-content;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn .arr { transition: transform .3s var(--ease); }
-    .btn:hover .arr { transform: translateX(4px); }
-
-    .btn-light { color: var(--paper); border-color: var(--paper); }
-    .btn-light:hover { background: var(--paper); color: var(--ink); }
-    .btn-dark { color: var(--ink); border-color: var(--ink); }
-    .btn-dark:hover { background: var(--ink); color: var(--paper); }
-    .btn-bordeaux { color: var(--paper); background: var(--bordeaux); border-color: var(--bordeaux); }
-    .btn-bordeaux:hover { background: var(--bordeaux-deep); border-color: var(--bordeaux-deep); }
-    .btn-ghost-light { color: var(--paper); border-color: rgba(250,245,235,.4); }
-    .btn-ghost-light:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-
-    .eyebrow {
       font-size: .72rem;
       font-weight: 500;
-      letter-spacing: .22em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--bordeaux);
-      margin-bottom: 1.2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .7rem;
+      opacity: .82;
+      transition: opacity .25s;
     }
-    .eyebrow::before {
-      content: '';
-      width: 28px; height: 1px;
-      background: currentColor;
-    }
-    .eyebrow.on-dark { color: var(--brass); }
+    .nav-links a:hover { opacity: 1; }
 
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -.015em;
-    }
-    .section-title em { font-style: italic; font-weight: 300; color: var(--bordeaux); }
+    .nav-toggle { display: none; }
 
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
+    /* ---------- HERO ---------- */
     .hero {
+      position: relative;
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      position: relative;
-      overflow: hidden;
-      background: var(--ink);
-      color: var(--paper);
-    }
-    .hero-text {
-      padding: 9rem 4.5rem 5rem;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-      z-index: 3;
-      background:
-        radial-gradient(ellipse at 0% 100%, rgba(107,31,40,.28), transparent 55%),
-        linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
+      align-items: flex-end;
+      color: var(--paper);
+      overflow: hidden;
     }
-    .hero-text::after {
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+    .hero::after {
       content: '';
       position: absolute;
-      top: 0; bottom: 0; right: -1px;
-      width: 1px;
-      background: linear-gradient(180deg, transparent, rgba(184,153,104,.35), transparent);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 100%);
+      z-index: 2;
     }
-
-    .hero-tag {
-      font-size: .75rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--brass);
-      opacity: .95;
-      margin-bottom: 2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: .8rem;
-    }
-    .hero-tag::before {
-      content: ''; width: 34px; height: 1px; background: var(--brass);
-    }
-
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(2.8rem, 6.5vw, 6.2rem);
-      font-weight: 300;
-      line-height: 1.02;
-      letter-spacing: -.02em;
-      margin-bottom: 2rem;
-      color: var(--paper);
-    }
-    .hero-title em { font-style: italic; color: var(--brass); font-weight: 300; }
-    .hero-title .line2 { color: var(--grej); }
-
-    .hero-desc {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: var(--grej);
-      opacity: .88;
-      max-width: 48ch;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-    }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    .hero-art {
+    .hero-inner {
       position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-rows: 2fr 1fr;
-      gap: 4px;
-      background: var(--ink-deep);
-    }
-    .hero-art .ha-top {
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-art .ha-bot {
+      z-index: 3;
+      width: 100%;
+      padding: 0 3rem 5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px;
+      gap: 4rem;
+      align-items: end;
     }
-    .hero-pic {
+    .hero-eyebrow {
+      font-size: .7rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-weight: 500;
+      opacity: .85;
+      margin-bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .9rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 36px; height: 1px; background: currentColor;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 6vw, 5.4rem);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -.015em;
+    }
+    .hero-title em { font-style: italic; font-weight: 300; }
+    .hero-meta {
+      align-self: end;
+      font-size: .78rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: .8;
+      max-width: 32ch;
+      line-height: 1.8;
+    }
+    .hero-meta .divider {
+      width: 28px; height: 1px;
+      background: currentColor;
+      margin-bottom: 1rem;
+      opacity: .6;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 1.8rem;
+      transform: translateX(-50%);
+      z-index: 4;
+      font-size: .65rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--paper);
+      opacity: .7;
+    }
+
+    /* ---------- INTRO ---------- */
+    .section {
+      padding: 8rem 3rem;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .intro {
+      text-align: center;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-size: .7rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--taupe);
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      margin-bottom: 1.6rem;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ''; width: 28px; height: 1px; background: currentColor; opacity: .6;
+    }
+    .eyebrow.left::after { display: none; }
+
+    .display {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.12;
+      letter-spacing: -.01em;
+      color: var(--ink);
+    }
+    .display em { font-style: italic; color: var(--ink-soft); }
+
+    .lede {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin-top: 2rem;
+      font-style: italic;
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      flex-wrap: wrap;
+    }
+    .projects-header .display { max-width: 16ch; }
+    .projects-header p {
+      max-width: 38ch;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.8;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 3rem 2rem;
+    }
+    .project {
       position: relative;
+      cursor: pointer;
+    }
+    .project-media {
       overflow: hidden;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.01);
-      transition: transform 10s var(--ease);
+      background: var(--bone);
+      margin-bottom: 1.4rem;
     }
-    .hero-pic::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(31,25,20,0) 40%, rgba(31,25,20,.35) 100%);
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.6s var(--ease);
     }
-    .hero-art:hover .hero-pic { transform: scale(1.05); }
-    .hp1 { background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAkLCgkLDhgQDg0NDh0VFhEWFxUZGBYVFRMYHSggGBolHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0fHyUtLS0rLS0rLS0tLS0tKy8tLS0tLS0tLS0tKy0tLS0tKy0rLS0tLS8tLS0tLS0tLS0tLf/AABEIANwEDAMBIgACEQEDEQH/xAAbAAEBAQEBAQEBAAAAAAAAAAAAAQIDBAUGB//EAEMQAAEDAgMEBQYDBgQEBwAAAAEAAgMEEQUSITFBBhMiUWFxgZEUobHB0QcUIzJC4SNSYnKS4fAVM0PC8SRTotLx/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAEDAgQF/8QAJxEBAQEBAAICAgICAwAAAAAAAAERAhIhAzFBBBMUYRQiMlKhsfD/2gAMAwEAAhEDEQA/APZ8wzqK0lIE9cjWqWn9SgV4Wg5VhQxHkD1SgYcV6bq9wTqY2VbN1hJQv3g4m8M7QJxqZ5W4q1ctkM6B9p2jWl6jCk1wYvYg8Pq8qWQ1x9tI4m2w0oJvR5xkP8Azp8PqYFZk6p8jJ7bHn6l8xZ5T3m7zq9B8U9p2U1Zs0xq9x3F4rS9h8WQ8aYwq9b+F6hH3iPz+1d3m7e+o2fP9x7D7W6vL9dW3XnC4m3l2xQy7g1v0qM2jWq1W8QbL1nM2OQqzqW9h7tKj3y0S8f7z5qR7m1d+Y9m/5UOq7jv7x1l1c4bY8J3M1eV2Q4nP3nB9aF5m2W6t4qX4pJ8dFf9z0lYdJk7U8R1i8lE1q5k3nB4V5t9rjQW4V3qz2tFq4oN1Hh7i1Z2n3o6y1Yy7j0jWq5g7z3q6g3Zx+K8Q3vXxYv8Aq1x7nVw2F2y1kq2k8Q1w4GQ4P8AEfVb9J8P0t7Z5Czq5b4v6aKpJj4s1m9VQ8tqjW8b3m2x1y8d4mQk9W4+9Wc3P8AN9tP4Ck3p2vPp6H4i2Wc9Q1Qq7t7l7LhS+3oM1tD6w9Sg7qH4q7xWg7wW1s0Wm1k2bGQmS4+XqaE6Y1vYv9d7f3b+QfA+4O3m2z0u6xk3c3bKq2uFfQq5mS4B4x7qz4m+LkP6bq+4S2v2k9U1x5m3hK2xU0n0m5bQ7a6yqO0pYVY7n5kz+f0q+f2z3b5Nf7C2fX1b8i3m6Wj4cWQf7Q4s7xV6k7nHkOeR7VfI4H6hVt4f1+5e7Jm1t0wq8D1fV2vN2JrUq6x4h1XlW8jR8m4iM7HnI8v0r+4YvCw5H5VvWv6z3k3N9Q1eWj7d4Xq3pGZ0h6o3N+JQ3m7qJ4nQ9y6mZ0m2Vh4uM5z7V3H2H+2fL8Q+LzW7O7aZr3mS4t0pX8y3Xw+M9E3m0r0E6mQ8f2h5qj9P6V7b+9X+uH8j7eX4c+W8Q7a3vM7i7bC6b1rKkq8k0qM5wP9K7uP7F7L+E2n1s1PjT1x2r2O5Rk3p8fM1Z6q3c8Yqf8AT5Uq6k6Lx3R3Vn7rZ3D8K2P8A1o9nZ8m4P6V2b3P+e7f4U/8Ai3zX6m0d3Y1W7l7V0zqfKj1I3Y8Hkq5wQfI1y7H+2v3fH8S3eXr2v9h3u3pZK1p7m4VZc5lWmN8mJ+Vd3H9t9m+J7S7Y7e7Zz6pW2tW3a5Q5b8n5VY+9d4qT9G3/AMq+I7w2v8A2r7v5E9x+LPlPEO2t7zO4u2wum9aypKvJNKjOcD/Su7j+xe0L4TafWzU+NPXHavY7lGTenz8zVnqrdzxip/wBPtK9T7+0v3b4h8Xmt2d20zXvMlxbpSv5luvh8Z6JvNpXpJ1Mh4/tDzVH6f0r23N9q9m+J7Q7Z7e7Zz6pW2tW3a5Q5b8n5VY+9d3f8A1d+7f4k9x+LPlPEO2t7zO4u2wum9aypKvJNKjOcD/Su7j+xe0L4TafWzU+NPXHavY7lGTenz8zVnqrdzxip/0+1f/Z'); }
-    .hp2 { background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...'); }
-    .hp3 { background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...'); }
+    .project:hover .project-media img { transform: scale(1.04); }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding-top: .35rem;
+      border-top: 1px solid var(--line);
+    }
+    .project-name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: .005em;
+      line-height: 1.2;
+    }
+    .project-name em { font-style: italic; }
+    .project-loc {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      white-space: nowrap;
+    }
+
+    .p-large { grid-column: span 12; }
+    .p-large .project-media { aspect-ratio: 16/9; }
+    .p-half  { grid-column: span 6; }
+    .p-half  .project-media { aspect-ratio: 4/5; }
+    .p-third { grid-column: span 4; }
+    .p-third .project-media { aspect-ratio: 3/4; }
+    .p-tall  { grid-column: span 5; }
+    .p-tall  .project-media { aspect-ratio: 3/4; }
+    .p-wide  { grid-column: span 7; }
+    .p-wide  .project-media { aspect-ratio: 4/3; }
+
+    /* ---------- ABOUT / EDITORIAL ---------- */
+    .editorial {
+      background: var(--bone);
+    }
+    .ed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .ed-img {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .ed-img img { width: 100%; height: 100%; object-fit: cover; }
+    .ed-text { padding-right: 2rem; }
+    .ed-text p {
+      color: var(--ink-soft);
+      margin-top: 1.4rem;
+      font-size: .98rem;
+      line-height: 1.85;
+      max-width: 52ch;
+    }
+    .ed-text .display { margin-top: 1.6rem; }
+    .ed-signature {
+      margin-top: 2.5rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+    .ed-role {
+      font-size: .7rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      margin-top: .3rem;
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      margin-top: 5rem;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .service {
+      padding: 3.5rem 2.5rem;
+      border-right: 1px solid var(--line);
+    }
+    .service:last-child { border-right: 0; }
+    .service-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .service-title {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .service p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    /* ---------- PRESS ---------- */
+    .press-strip {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 6rem 3rem;
+    }
+    .press-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .press-inner .display { color: var(--paper); }
+    .press-inner .eyebrow { color: var(--stone); }
+    .press-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 4rem;
+      list-style: none;
+    }
+    .press-list li {
+      border-top: 1px solid rgba(246,243,238,.15);
+      padding-top: 1.2rem;
+    }
+    .press-pub {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      letter-spacing: .01em;
+    }
+    .press-meta {
+      font-size: .68rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      opacity: .65;
+      margin-top: .4rem;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      padding: 9rem 3rem;
+      text-align: center;
+    }
+    .contact .display { max-width: 18ch; margin: 0 auto; }
+    .contact-mail {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      font-style: italic;
+      color: var(--accent);
+      margin-top: 2.5rem;
+      display: inline-block;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: .25rem;
+      transition: opacity .3s;
+    }
+    .contact-mail:hover { opacity: .7; }
+    .contact-meta {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      flex-wrap: wrap;
+    }
+    .contact-meta strong { display: block; color: var(--ink); margin-top: .4rem; font-weight: 500; letter-spacing: .14em; }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 3rem;
+      background: var(--ink);
+      color: var(--stone);
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .foot-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .foot-brand {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: .03em;
+      text-transform: none;
+      color: var(--paper);
+    }
+    .foot-brand span { font-style: italic; color: var(--accent); }
+    .foot-links { display: flex; gap: 2rem; }
+    .foot-links a:hover { color: var(--paper); }
+
+    /* ---------- REVEAL ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 1s var(--ease), transform 1s var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 960px) {
+      .nav { padding: 1.2rem 1.5rem; }
+      .nav.scrolled { padding: .9rem 1.5rem; }
+      .nav-links { display: none; }
+      .section { padding: 5rem 1.5rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem 3.5rem; gap: 2rem; }
+      .hero-meta { max-width: 36ch; }
+
+      .projects-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .p-large, .p-half, .p-third, .p-tall, .p-wide { grid-column: span 12; }
+      .projects { gap: 3rem 1rem; }
+
+      .ed-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ed-text { padding-right: 0; }
+
+      .services { grid-template-columns: 1fr; }
+      .service { border-right: 0; border-bottom: 1px solid var(--line); }
+      .service:last-child { border-bottom: 0; }
+
+      .press-strip { padding: 4rem 1.5rem; }
+      .press-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .press-list { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .contact { padding: 5rem 1.5rem; }
+      .contact-meta { gap: 2rem; }
+
+      footer { padding: 2rem 1.5rem; }
+      .foot-inner { flex-direction: column; align-items: flex-start; }
+    }
   </style>
 </head>
-<body></body>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="#top" class="nav-brand">Aysa<span>·</span>Works</a>
+    <ul class="nav-links">
+      <li><a href="#projeler">Projeler</a></li>
+      <li><a href="#stüdyo">Stüdyo</a></li>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#basın">Basın</a></li>
+      <li><a href="#iletişim">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <img class="hero-img"
+         src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2400&q=85"
+         alt="Sıcak nötr tonlarda, doğal ışıkla aydınlanan oturma alanı"
+         fetchpriority="high" />
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">İç Mimari Stüdyosu — İstanbul</div>
+        <h1 class="hero-title">Zamansız mekânlar,<br/><em>sessiz bir lüksle.</em></h1>
+      </div>
+      <div class="hero-meta">
+        <div class="divider"></div>
+        Konut ve ticari mekânlar için<br/>
+        bütüncül iç mimari ve<br/>
+        sanat danışmanlığı.
+      </div>
+    </div>
+    <div class="scroll-cue">Aşağı Kaydırın</div>
+  </header>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="container intro reveal">
+      <div class="eyebrow">Stüdyo Hakkında</div>
+      <h2 class="display">
+        Sıcak nötrlerin <em>zamansız</em> zarafeti,<br/>
+        her detayda elle yazılmış bir hikâye.
+      </h2>
+      <p class="lede">
+        Aysa-Works; doğal malzemeleri, el işçiliğini ve ışığın değişen ritmini bir araya
+        getirerek, içinde yaşandıkça olgunlaşan mekânlar tasarlar.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projeler" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="projects-header reveal">
+        <div>
+          <div class="eyebrow left">Seçili Projeler</div>
+          <h2 class="display">Yakın <em>dönem</em> çalışmalar</h2>
+        </div>
+        <p>
+          Konut, butik otel ve yeme-içme mekânları arasından seçilmiş, son üç yıl
+          içerisinde tamamlanmış projelerimizden bir derleme.
+        </p>
+      </div>
+
+      <div class="projects">
+
+        <article class="project p-large reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85"
+                 alt="Bebek Konağı oturma alanı" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Bebek <em>Konağı</em></h3>
+            <span class="project-loc">İstanbul · Konut · 2024</span>
+          </div>
+        </article>
+
+        <article class="project p-half reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85"
+                 alt="Alaçatı Sahil Evi" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Alaçatı <em>Sahil Evi</em></h3>
+            <span class="project-loc">İzmir · Konut · 2024</span>
+          </div>
+        </article>
+
+        <article class="project p-half reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1400&q=85"
+                 alt="Karaköy Mutfak" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Karaköy <em>Atölyesi</em></h3>
+            <span class="project-loc">İstanbul · Stüdyo · 2023</span>
+          </div>
+        </article>
+
+        <article class="project p-tall reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=1400&q=85"
+                 alt="Cihangir dairesi" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Cihangir <em>Loft</em></h3>
+            <span class="project-loc">İstanbul · Konut · 2023</span>
+          </div>
+        </article>
+
+        <article class="project p-wide reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1800&q=85"
+                 alt="Maison Pera otel lobisi" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Maison <em>Pera</em></h3>
+            <span class="project-loc">İstanbul · Butik Otel · 2024</span>
+          </div>
+        </article>
+
+        <article class="project p-third reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=85"
+                 alt="Çankaya Rezidansı yatak odası" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Çankaya <em>Rezidansı</em></h3>
+            <span class="project-loc">Ankara · Konut · 2023</span>
+          </div>
+        </article>
+
+        <article class="project p-third reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?auto=format&fit=crop&w=1200&q=85"
+                 alt="Beyoğlu mağaza tasarımı" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Atelier <em>Galata</em></h3>
+            <span class="project-loc">İstanbul · Perakende · 2023</span>
+          </div>
+        </article>
+
+        <article class="project p-third reveal">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=85"
+                 alt="Bodrum villa banyosu" loading="lazy" />
+          </div>
+          <div class="project-meta">
+            <h3 class="project-name">Yalıkavak <em>Villa</em></h3>
+            <span class="project-loc">Bodrum · Konut · 2022</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL / STUDIO -->
+  <section class="editorial section" id="stüdyo">
+    <div class="container">
+      <div class="ed-grid">
+        <div class="ed-img reveal">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1400&q=85"
+               alt="Aysa-Works kurucusu portresi" loading="lazy" />
+        </div>
+        <div class="ed-text reveal">
+          <div class="eyebrow left">Stüdyo</div>
+          <h2 class="display">
+            Mekânı, içinde <em>yaşayanın</em> sessiz bir portresi olarak okuruz.
+          </h2>
+          <p>
+            2017 yılında İstanbul'da kurulan Aysa-Works, konut ve seçili ticari projelerde
+            bütüncül iç mimari hizmeti sunan küçük ölçekli bir stüdyodur. Her projeye, mekânın
+            coğrafyası, ışığı ve sahibinin gündelik ritmi üzerinden başlarız.
+          </p>
+          <p>
+            Tasarım sürecimiz; sıcak nötr bir palet, doğal taş ve ahşap, el yapımı seramik ve
+            sade bir aydınlatma kurgusu üzerine kuruludur. Detaylar abartısız ama belirgin;
+            malzemeler yıllandıkça güzelleşir.
+          </p>
+          <div class="ed-signature">— Aysa Demir</div>
+          <div class="ed-role">Kurucu, İç Mimar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="hizmetler" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="intro reveal">
+        <div class="eyebrow">Hizmetler</div>
+        <h2 class="display">Konsept, uygulama ve <em>danışmanlık.</em></h2>
+      </div>
+
+      <div class="services reveal">
+        <div class="service">
+          <div class="service-num">— 01</div>
+          <h3 class="service-title">İç Mimari Tasarım</h3>
+          <p>
+            Konut ve butik ticari projelerde plan kurgusu, malzeme paleti, mobilya seçimi ve
+            aydınlatma tasarımını kapsayan uçtan uca tasarım hizmeti.
+          </p>
+        </div>
+        <div class="service">
+          <div class="service-num">— 02</div>
+          <h3 class="service-title">Uygulama Yönetimi</h3>
+          <p>
+            Şantiye dönemi boyunca usta, tedarikçi ve sanat eseri koordinasyonunu üstleniyor;
+            projenin kâğıttaki halini eksiksiz yaşama geçiriyoruz.
+          </p>
+        </div>
+        <div class="service">
+          <div class="service-num">— 03</div>
+          <h3 class="service-title">Sanat &amp; Obje Danışmanlığı</h3>
+          <p>
+            Mekânın hikâyesini tamamlayan tablo, seramik ve tekstil seçimleri için bağımsız
+            danışmanlık ve özel üretim koordinasyonu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS -->
+  <section class="press-strip" id="basın">
+    <div class="press-inner">
+      <div class="reveal">
+        <div class="eyebrow left">Basın</div>
+        <h2 class="display">Hakkımızda <em>yazılanlar.</em></h2>
+      </div>
+      <ul class="press-list reveal">
+        <li>
+          <div class="press-pub">AD Türkiye</div>
+          <div class="press-meta">Mart 2025 · Maison Pera</div>
+        </li>
+        <li>
+          <div class="press-pub">Maison Française</div>
+          <div class="press-meta">Kasım 2024 · Bebek Konağı</div>
+        </li>
+        <li>
+          <div class="press-pub">Elle Decor</div>
+          <div class="press-meta">Eylül 2024 · Cihangir Loft</div>
+        </li>
+        <li>
+          <div class="press-pub">Cabana Magazine</div>
+          <div class="press-meta">Yaz 2024 · Yalıkavak Villa</div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="iletişim">
+    <div class="reveal">
+      <div class="eyebrow">İletişim</div>
+      <h2 class="display">Yeni bir <em>projeyi</em> birlikte kurgulayalım.</h2>
+      <a href="mailto:studio@aysa-works.com" class="contact-mail">studio@aysa-works.com</a>
+
+      <div class="contact-meta">
+        <div>Stüdyo<strong>Karaköy, İstanbul</strong></div>
+        <div>Telefon<strong>+90 212 000 00 00</strong></div>
+        <div>Instagram<strong>@aysa.works</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-brand">Aysa<span>·</span>Works</div>
+      <div class="foot-links">
+        <a href="#projeler">Projeler</a>
+        <a href="#stüdyo">Stüdyo</a>
+        <a href="#iletişim">İletişim</a>
+      </div>
+      <div>© 2026 Aysa-Works. Tüm hakları saklıdır.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav state
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
 </html>
