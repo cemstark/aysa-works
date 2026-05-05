@@ -181,25 +181,33 @@ textarea {
 .nav-folder-menu {
   position: absolute;
   top: 100%;
-  left: -16px;
+  left: 0;
   right: auto;
-  min-width: 240px;
+  min-width: max-content;
   display: grid;
-  gap: 0;
-  padding: 16px;
-  background: rgba(248, 247, 243, 0.96);
-  border: 1px solid rgba(216, 211, 200, 0.78);
-  box-shadow: 0 18px 40px rgba(27, 27, 24, 0.08);
+  gap: 4px;
+  padding: 14px 0 6px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
+  transform: translateY(6px);
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
   letter-spacing: 0.2em;
   font-size: 16px;
+  white-space: nowrap;
 }
 
 .nav-folder-menu a {
-  padding: 6px 0;
+  padding: 4px 0;
+  color: inherit;
+}
+
+.nav-folder-menu a:hover,
+.nav-folder-menu a:focus {
+  background: transparent;
+  opacity: 0.72;
 }
 
 .home-page .nav-folder-menu {
