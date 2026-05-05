@@ -14,8 +14,8 @@ $bodyClass = $bodyClass ?? '';
     <link rel="preload" as="image" href="images/oturmaodasi.jpeg">
     <link rel="preload" href="assets/fonts/jost/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/source-sans-3/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fonts.css?v=<?= @filemtime(__DIR__ . '/../assets/css/fonts.css') ?: time() ?>">
+    <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body class="<?= e($bodyClass) ?>">
     <header class="site-header" data-header>
