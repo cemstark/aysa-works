@@ -141,26 +141,30 @@ textarea {
   justify-content: flex-end;
   align-items: center;
   font-family: var(--display);
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
 }
 
 .site-nav-inner {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
+  gap: 0;
+  margin: 0 -9px;
 }
 
 .nav-folder {
   position: relative;
+  display: inline-block;
+  margin: 0 9px;
+  padding: 10px 0;
 }
 
 .nav-folder-title {
-  display: block;
-  padding: 22px 18px;
+  display: inline;
+  padding: 0;
   border-bottom: 1px solid transparent;
 }
 
@@ -177,11 +181,12 @@ textarea {
 .nav-folder-menu {
   position: absolute;
   top: 100%;
-  right: 0;
+  left: -16px;
+  right: auto;
   min-width: 240px;
   display: grid;
   gap: 0;
-  padding: 12px 0;
+  padding: 16px;
   background: rgba(248, 247, 243, 0.96);
   border: 1px solid rgba(216, 211, 200, 0.78);
   box-shadow: 0 18px 40px rgba(27, 27, 24, 0.08);
@@ -189,13 +194,19 @@ textarea {
   visibility: hidden;
   transform: translateY(8px);
   transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
+  font-size: 16px;
+}
+
+.nav-folder-menu a {
+  padding: 6px 0;
 }
 
 .home-page .nav-folder-menu {
-  background: rgba(20, 18, 14, 0.78);
-  border-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
+  background: transparent;
+  border-color: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .home-page .nav-folder-menu a {
