@@ -9,8 +9,8 @@ $featuredProjects = array_values(array_filter($projects, fn ($project) => $proje
 <section class="hero hero-fullscreen" aria-label="Aysa Works opening image">
     <img src="images/oturmaodasi.jpeg" alt="Warm living room interior by Aysa Works">
     <div class="hero-title">
-        <p class="eyebrow">Aysa Works Architecture & Interiors</p>
-        <h1>Warm, well-crafted spaces shaped through natural materials and thoughtful details.</h1>
+        <p class="eyebrow">Aysa Works</p>
+        <h1>Architecture &amp; Interiors</h1>
     </div>
     <a class="hero-scroll" href="#home-intro" aria-label="Scroll to studio introduction"></a>
 </section>
