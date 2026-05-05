@@ -11,6 +11,7 @@ $site = [
 $nav = [
     'projects.php' => 'Projects',
     'studio.php' => 'Studio',
+    'press.php' => 'Press',
     'services.php' => 'Services',
     'contact.php' => 'Contact',
 ];

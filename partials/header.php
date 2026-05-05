@@ -29,10 +29,41 @@ $bodyClass = $bodyClass ?? '';
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
             Menu
         </button>
-        <nav class="site-nav" id="site-nav" data-nav>
-            <?php foreach ($nav as $href => $label): ?>
-                <a href="<?= e($href) ?>" class="<?= current_page() === $href ? 'is-active' : '' ?>"><?= e($label) ?></a>
-            <?php endforeach; ?>
+        <nav class="site-nav" id="site-nav" data-nav aria-label="Ana navigasyon">
+            <div class="site-nav-inner">
+                <div class="nav-folder <?= current_page() === 'projects.php' || current_page() === 'project.php' ? 'is-active' : '' ?>">
+                    <a class="nav-folder-title" href="projects.php">Projects</a>
+                    <div class="nav-folder-menu">
+                        <a href="projects.php#residential-architecture">Residential Architecture</a>
+                        <a href="projects.php#interiors-decor">Interiors & Decor</a>
+                        <a href="projects.php#thoughtful-details">Thoughtful Details</a>
+                        <a href="projects.php#furniture-objects">Furniture & Objects</a>
+                    </div>
+                </div>
+                <div class="nav-folder <?= current_page() === 'studio.php' || current_page() === 'services.php' ? 'is-active' : '' ?>">
+                    <a class="nav-folder-title" href="studio.php">Studio</a>
+                    <div class="nav-folder-menu">
+                        <a href="studio.php#collaboration">Design Approach</a>
+                        <a href="services.php">Services</a>
+                        <a href="studio.php#functionality">Functionality</a>
+                    </div>
+                </div>
+                <div class="nav-folder <?= current_page() === 'press.php' ? 'is-active' : '' ?>">
+                    <a class="nav-folder-title" href="press.php">Press</a>
+                    <div class="nav-folder-menu">
+                        <a href="press.php#press">Press</a>
+                        <a href="press.php#studio-notes">Studio Notes</a>
+                        <a href="press.php#awards">Awards</a>
+                    </div>
+                </div>
+                <div class="nav-folder <?= current_page() === 'contact.php' ? 'is-active' : '' ?>">
+                    <a class="nav-folder-title" href="contact.php">Contact</a>
+                    <div class="nav-folder-menu">
+                        <a href="contact.php">General Contact</a>
+                        <a href="contact.php">Project Inquiries</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
     <main>

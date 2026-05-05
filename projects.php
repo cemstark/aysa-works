@@ -15,7 +15,7 @@ foreach ($projects as $project) {
 
 <section class="project-index section-wrap">
     <?php foreach ($groups as $category => $items): ?>
-        <article class="project-category">
+        <article class="project-category" id="<?= e(strtolower(str_replace([' & ', ' '], ['-', '-'], $category))) ?>">
             <div class="category-heading">
                 <h2><?= e($category) ?></h2>
                 <p>Featured</p>

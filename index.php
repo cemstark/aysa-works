@@ -6,17 +6,16 @@ require __DIR__ . '/partials/header.php';
 $featuredProjects = array_values(array_filter($projects, fn ($project) => $project['featured']));
 ?>
 
-<section class="hero section-wrap">
+<section class="hero hero-fullscreen" aria-label="Aysa Works opening image">
+    <img src="images/oturmaodasi.jpeg" alt="Warm living room interior by Aysa Works">
     <div class="hero-title">
         <p class="eyebrow">Aysa Works Architecture & Interiors</p>
         <h1>Warm, well-crafted spaces shaped through natural materials and thoughtful details.</h1>
     </div>
-    <figure class="hero-image">
-        <img src="images/oturmaodasi.jpeg" alt="Warm living room interior by Aysa Works">
-    </figure>
+    <a class="hero-scroll" href="#home-intro" aria-label="Scroll to studio introduction"></a>
 </section>
 
-<section class="intro section-wrap">
+<section class="intro section-wrap" id="home-intro">
     <div></div>
     <div class="intro-copy">
         <p>We create residential interiors, renovation concepts, custom kitchens, and built-in storage systems with a quiet, useful, and material-led approach.</p>
