@@ -48,14 +48,6 @@ $bodyClass = $bodyClass ?? '';
                         <a href="studio.php#functionality">Functionality</a>
                     </div>
                 </div>
-                <div class="nav-folder <?= current_page() === 'press.php' ? 'is-active' : '' ?>">
-                    <a class="nav-folder-title" href="press.php">Press</a>
-                    <div class="nav-folder-menu">
-                        <a href="press.php#press">Press</a>
-                        <a href="press.php#studio-notes">Studio Notes</a>
-                        <a href="press.php#awards">Awards</a>
-                    </div>
-                </div>
                 <div class="nav-folder <?= current_page() === 'contact.php' ? 'is-active' : '' ?>">
                     <a class="nav-folder-title" href="contact.php">Contact</a>
                     <div class="nav-folder-menu">
