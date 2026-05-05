@@ -12,6 +12,9 @@ $bodyClass = $bodyClass ?? '';
     <meta name="description" content="<?= e($pageDescription) ?>">
     <title><?= e($pageTitle) ?></title>
     <link rel="preload" as="image" href="images/oturmaodasi.jpeg">
+    <link rel="preload" href="assets/fonts/jost/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/source-sans-3/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="<?= e($bodyClass) ?>">

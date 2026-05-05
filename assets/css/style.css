@@ -7,8 +7,8 @@
   --accent: #8a6a42;
   --max: 1180px;
   --gutter: clamp(18px, 4vw, 54px);
-  --display: "Futura PT", "Brandon Grotesque", "Jost", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
-  --body: "Proxima Nova", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --display: "Aysa Jost", "Futura PT", "Brandon Grotesque", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --body: "Aysa Source Sans 3", "Proxima Nova", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
