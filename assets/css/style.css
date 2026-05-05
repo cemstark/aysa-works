@@ -949,13 +949,20 @@ button {
   .nav-folder-menu {
     position: static;
     min-width: 0;
-    padding: 0 0 12px 16px;
+    padding: 0;
     background: transparent;
     border: 0;
     box-shadow: none;
-    opacity: 1;
-    visibility: visible;
     transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 220ms ease, padding 220ms ease, opacity 220ms ease;
+  }
+
+  .nav-folder:hover .nav-folder-menu,
+  .nav-folder:focus-within .nav-folder-menu {
+    max-height: 320px;
+    padding: 4px 0 12px 16px;
   }
 
   .nav-folder-menu a {
