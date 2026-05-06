@@ -13,7 +13,7 @@ $brandAria = sprintf(t('header.brand_aria'), $site['name']);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= e($pageDescription) ?>">
     <title><?= e($pageTitle) ?></title>
-    <link rel="preload" as="image" href="images/hero-quality.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/hero-quality.webp?v=2" type="image/webp">
     <link rel="preload" href="assets/fonts/jost/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/source-sans-3/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/fonts.css?v=<?= @filemtime(__DIR__ . '/../assets/css/fonts.css') ?: time() ?>">

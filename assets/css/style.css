@@ -218,10 +218,11 @@ textarea {
 
 .hero {
   position: relative;
-  background-image: url("../../images/hero-quality.webp");
+  background-image: url("../../images/hero-quality.webp?v=2");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .hero-fullscreen {
