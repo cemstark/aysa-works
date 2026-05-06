@@ -106,12 +106,46 @@ textarea {
 
 .site-nav {
   display: flex;
+  align-items: flex-start;
   justify-content: flex-end;
+  gap: 18px;
   padding-top: 7px;
   font-family: var(--display);
   font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px 14px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.lang-switch a {
+  display: inline-block;
+  padding: 0 4px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.lang-switch a:hover,
+.lang-switch a:focus {
+  color: var(--ink);
+}
+
+.lang-switch a.is-active {
+  color: var(--ink);
+  border-bottom-color: currentColor;
+}
+
+.lang-switch span {
+  color: var(--line);
 }
 
 .site-nav-inner {
@@ -1106,4 +1140,18 @@ button {
   .project-list em {
     text-align: left;
   }
+
+  .lang-switch {
+    justify-content: flex-start;
+    padding: 12px 0 4px;
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+  }
 }
+
+#home-intro > .intro-copy > p,
+.services-preview.section-wrap > div:nth-child(2) > div,
+.split-links.section-wrap {
+  font-weight: 300;
+}
+

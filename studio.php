@@ -1,51 +1,52 @@
 <?php
-$pageTitle = 'Studio | Aysa Works';
-$pageDescription = 'Aysa Works design approach: collaboration, functionality, and enduring materials.';
+require_once __DIR__ . '/data.php';
+$pageTitle = t('page.studio.title');
+$pageDescription = t('page.studio.description');
 require __DIR__ . '/partials/header.php';
 ?>
 
 <section class="studio-opening section-wrap">
     <figure>
-        <img src="images/yatakodasi.jpeg" alt="Quiet bedroom interior">
+        <img src="images/yatakodasi.jpeg" alt="<?= e(t('studio.opening_alt')) ?>">
     </figure>
     <div>
-        <p>Aysa Works was founded around three fundamental concepts:</p>
-        <h1>Collaboration, functionality, and sustainability.</h1>
+        <p><?= e(t('studio.opening_text')) ?></p>
+        <h1><?= e(t('studio.opening_title')) ?></h1>
     </div>
 </section>
 
 <section class="approach section-wrap" id="collaboration">
-    <h2>Collaboration</h2>
+    <h2><?= e(t('studio.collab_title')) ?></h2>
     <div>
-        <h3>With clients</h3>
-        <p>Interior work is personal. We begin with how the space needs to feel, what it needs to hold, and how daily routines can become easier.</p>
-        <h3>Within the studio</h3>
-        <p>Plans, materials, lighting, furniture, and storage are developed together so the final room feels complete rather than assembled in parts.</p>
-        <h3>With builders and makers</h3>
-        <p>We keep details clear enough for production and flexible enough to improve during site coordination.</p>
+        <h3><?= e(t('studio.collab.clients.title')) ?></h3>
+        <p><?= e(t('studio.collab.clients.text')) ?></p>
+        <h3><?= e(t('studio.collab.studio.title')) ?></h3>
+        <p><?= e(t('studio.collab.studio.text')) ?></p>
+        <h3><?= e(t('studio.collab.builders.title')) ?></h3>
+        <p><?= e(t('studio.collab.builders.text')) ?></p>
     </div>
 </section>
 
 <section class="approach section-wrap" id="functionality">
-    <h2>Functionality</h2>
+    <h2><?= e(t('studio.functionality_title')) ?></h2>
     <div>
         <figure class="inline-image">
-            <img src="images/giyinmeodasi.jpeg" alt="Built-in dressing room storage">
+            <img src="images/giyinmeodasi.jpeg" alt="<?= e(t('studio.functionality_alt')) ?>">
         </figure>
-        <h3>Durable, cleanable, organized</h3>
-        <p>A calm interior depends on storage, circulation, and materials that can support real use. We design rooms to be easy to live in first.</p>
-        <h3>Flexible</h3>
-        <p>Homes change over time. The best layouts leave space for future routines, changing furniture, and different ways of living.</p>
+        <h3><?= e(t('studio.functionality.durable.title')) ?></h3>
+        <p><?= e(t('studio.functionality.durable.text')) ?></p>
+        <h3><?= e(t('studio.functionality.flex.title')) ?></h3>
+        <p><?= e(t('studio.functionality.flex.text')) ?></p>
     </div>
 </section>
 
 <section class="approach section-wrap" id="materials">
-    <h2>Sustainability</h2>
+    <h2><?= e(t('studio.sustainability_title')) ?></h2>
     <div>
-        <h3>Natural materials and fewer replacements</h3>
-        <p>Wood, stone, limewash, textiles, and metal age with more dignity than thin decorative layers. We use material restraint to make spaces last longer.</p>
-        <h3>Less waste</h3>
-        <p>Good detailing reduces rework. Useful storage, robust surfaces, and adaptable layouts help a project stay relevant for years.</p>
+        <h3><?= e(t('studio.sustainability.materials.title')) ?></h3>
+        <p><?= e(t('studio.sustainability.materials.text')) ?></p>
+        <h3><?= e(t('studio.sustainability.waste.title')) ?></h3>
+        <p><?= e(t('studio.sustainability.waste.text')) ?></p>
     </div>
 </section>
 
