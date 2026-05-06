@@ -7,7 +7,7 @@ require __DIR__ . '/partials/header.php';
 
 <section class="studio-opening section-wrap">
     <figure>
-        <img src="images/yatakodasi.jpeg" alt="<?= e(t('studio.opening_alt')) ?>">
+        <img src="images/yatakodasi.webp" alt="<?= e(t('studio.opening_alt')) ?>">
     </figure>
     <div>
         <p><?= e(t('studio.opening_text')) ?></p>
@@ -31,7 +31,7 @@ require __DIR__ . '/partials/header.php';
     <h2><?= e(t('studio.functionality_title')) ?></h2>
     <div>
         <figure class="inline-image">
-            <img src="images/giyinmeodasi.jpeg" alt="<?= e(t('studio.functionality_alt')) ?>">
+            <img src="images/giyinmeodasi.webp" alt="<?= e(t('studio.functionality_alt')) ?>">
         </figure>
         <h3><?= e(t('studio.functionality.durable.title')) ?></h3>
         <p><?= e(t('studio.functionality.durable.text')) ?></p>

@@ -25,7 +25,7 @@ $featuredProjects = array_values(array_filter($projects, fn ($project) => $proje
 
 <section class="lookbooks section-wrap" aria-labelledby="lookbooks-title">
     <figure>
-        <img src="images/mutfak1.jpeg" alt="<?= e(t('home.lookbook_alt')) ?>">
+        <img src="images/mutfak1.webp" alt="<?= e(t('home.lookbook_alt')) ?>">
     </figure>
     <div>
         <h2 id="lookbooks-title"><?= e(t('home.lookbooks_title')) ?></h2>
@@ -50,7 +50,7 @@ $featuredProjects = array_values(array_filter($projects, fn ($project) => $proje
 
 <section class="guide section-wrap">
     <figure>
-        <img src="images/merdiven1.jpeg" alt="<?= e(t('home.guide_alt')) ?>">
+        <img src="images/merdiven1.webp" alt="<?= e(t('home.guide_alt')) ?>">
     </figure>
     <div class="guide-copy">
         <h2><?= e(t('home.guide_title')) ?></h2>

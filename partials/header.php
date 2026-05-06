@@ -22,7 +22,7 @@ $brandAria = sprintf(t('header.brand_aria'), $site['name']);
 <body class="<?= e($bodyClass) ?>">
     <header class="site-header" data-header>
         <a class="brand" href="index.php" aria-label="<?= e($brandAria) ?>">
-            <img src="images/logo.jpeg" alt="<?= e($site['name']) ?> logo">
+            <img src="images/logo.webp" alt="<?= e($site['name']) ?> logo">
             <span>
                 <strong><?= e($site['name']) ?></strong>
                 <em><?= e(tr($site['tagline'])) ?></em>

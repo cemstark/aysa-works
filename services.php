@@ -12,7 +12,7 @@ require __DIR__ . '/partials/header.php';
 
 <section class="service-page section-wrap">
     <figure>
-        <img src="images/mutfak2.jpeg" alt="<?= e(t('services.kitchen_alt')) ?>">
+        <img src="images/mutfak2.webp" alt="<?= e(t('services.kitchen_alt')) ?>">
     </figure>
     <div class="service-sections">
         <section id="architectural-design">

@@ -108,7 +108,7 @@ $projects = [
         'location' => ['tr' => 'Konut İç Mekânı', 'en' => 'Residential Interior'],
         'category' => ['tr' => 'İç Mekân ve Dekor', 'en' => 'Interiors & Decor'],
         'category_slug' => 'interiors-decor',
-        'image' => 'images/oturmaodasi.jpeg',
+        'image' => 'images/oturmaodasi.webp',
         'featured' => true,
         'summary' => [
             'tr' => 'Sıcak tonlar, rahat sirkülasyon ve sade detaylarla katmanlı bir oturma alanı.',
@@ -131,7 +131,7 @@ $projects = [
         'location' => ['tr' => 'Mutfak Renovasyonu', 'en' => 'Kitchen Renovation'],
         'category' => ['tr' => 'Konut Mimarlığı', 'en' => 'Residential Architecture'],
         'category_slug' => 'residential-architecture',
-        'image' => 'images/mutfak1.jpeg',
+        'image' => 'images/mutfak1.webp',
         'featured' => true,
         'summary' => [
             'tr' => 'Dayanıklı yüzeylere, orana ve günlük kullanıma odaklı kompakt bir mutfak çalışması.',
@@ -143,8 +143,8 @@ $projects = [
                 'en' => 'Cabinet proportions are kept simple so material and light become the main focus.',
             ],
             [
-                'tr' => 'Proje ileride images/mutfak1.jpeg dosyası değiştirilerek güncellenebilir.',
-                'en' => 'The project can be updated later by replacing images/mutfak1.jpeg.',
+                'tr' => 'Proje ileride images/mutfak1.webp dosyası değiştirilerek güncellenebilir.',
+                'en' => 'The project can be updated later by replacing images/mutfak1.webp.',
             ],
         ],
     ],
@@ -154,7 +154,7 @@ $projects = [
         'location' => ['tr' => 'Mutfak Detayı', 'en' => 'Kitchen Detail'],
         'category' => ['tr' => 'Konut Mimarlığı', 'en' => 'Residential Architecture'],
         'category_slug' => 'residential-architecture',
-        'image' => 'images/mutfak2.jpeg',
+        'image' => 'images/mutfak2.webp',
         'featured' => false,
         'summary' => [
             'tr' => 'Daha güçlü bir mobilya ve yüzey vurgusuyla dikey bir mutfak kompozisyonu.',
@@ -177,7 +177,7 @@ $projects = [
         'location' => ['tr' => 'Yüzey ve Donanım Çalışması', 'en' => 'Finish & Fixture Study'],
         'category' => ['tr' => 'İnce Detaylar', 'en' => 'Thoughtful Details'],
         'category_slug' => 'thoughtful-details',
-        'image' => 'images/mutfak3.jpeg',
+        'image' => 'images/mutfak3.webp',
         'featured' => false,
         'summary' => [
             'tr' => 'Yüzey, donanım ve aydınlatma kararları için malzeme öncelikli bir mutfak çerçevesi.',
@@ -189,8 +189,8 @@ $projects = [
                 'en' => 'Designed as a flexible case-study slot for future material notes.',
             ],
             [
-                'tr' => 'Daha güçlü bir detay fotoğrafı bulunduğunda images/mutfak3.jpeg dosyasını değiştirin.',
-                'en' => 'Replace images/mutfak3.jpeg if a stronger detail photograph becomes available.',
+                'tr' => 'Daha güçlü bir detay fotoğrafı bulunduğunda images/mutfak3.webp dosyasını değiştirin.',
+                'en' => 'Replace images/mutfak3.webp if a stronger detail photograph becomes available.',
             ],
         ],
     ],
@@ -200,7 +200,7 @@ $projects = [
         'location' => ['tr' => 'Sirkülasyon Detayı', 'en' => 'Circulation Detail'],
         'category' => ['tr' => 'İnce Detaylar', 'en' => 'Thoughtful Details'],
         'category_slug' => 'thoughtful-details',
-        'image' => 'images/merdiven1.jpeg',
+        'image' => 'images/merdiven1.webp',
         'featured' => true,
         'summary' => [
             'tr' => 'Merdiven, duvar düzlemleri ve gün ışığının mimari ifadeyi taşıdığı bir geçiş alanı.',
@@ -223,7 +223,7 @@ $projects = [
         'location' => ['tr' => 'Gömme Depolama', 'en' => 'Built-in Storage'],
         'category' => ['tr' => 'Mobilya ve Objeler', 'en' => 'Furniture & Objects'],
         'category_slug' => 'furniture-objects',
-        'image' => 'images/giyinmeodasi.jpeg',
+        'image' => 'images/giyinmeodasi.webp',
         'featured' => false,
         'summary' => [
             'tr' => 'Entegre dolap çözümleri ve günlük düzenlemeye odaklı, depolama öncelikli bir iç mekân.',
@@ -246,7 +246,7 @@ $projects = [
         'location' => ['tr' => 'Yatak Odası İç Mekânı', 'en' => 'Bedroom Interior'],
         'category' => ['tr' => 'İç Mekân ve Dekor', 'en' => 'Interiors & Decor'],
         'category_slug' => 'interiors-decor',
-        'image' => 'images/yatakodasi.jpeg',
+        'image' => 'images/yatakodasi.webp',
         'featured' => false,
         'summary' => [
             'tr' => 'Doku, dinlenme ve ölçülü kontrast üzerine kurulu sakin bir yatak odası kompozisyonu.',
