@@ -8,7 +8,6 @@ $featuredProjects = array_values(array_filter($projects, fn ($project) => $proje
 ?>
 
 <section class="hero hero-fullscreen" aria-label="<?= e(t('home.hero_aria')) ?>">
-    <img src="images/oturmaodasi.jpeg" alt="<?= e(t('home.hero_alt')) ?>">
     <div class="hero-title">
         <p class="eyebrow"><?= e(t('home.hero_eyebrow')) ?></p>
         <h1><?= e(t('home.hero_title')) ?></h1>
